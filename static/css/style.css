@@ -1,4 +1,3 @@
-/* Definições de variáveis de cor e fontes */
 :root {
     --primary-bg: #0d1117;
     --card-bg: #161b22;
@@ -10,8 +9,6 @@
     --success-color: #238636;
     --error-color: #da3633;
 }
-
-/* Estilo geral do corpo da página */
 body {
     background-color: var(--primary-bg);
     color: var(--text-color);
@@ -25,7 +22,6 @@ body {
     background-image: radial-gradient(var(--border-color) 1px, transparent 1px);
     background-size: 20px 20px;
 }
-
 #stitch-icon {
     position: fixed;
     font-size: 20vw;
@@ -33,16 +29,13 @@ body {
     user-select: none;
     z-index: 0;
 }
-
 .card-container {
     position: relative;
     width: 90vw;
     max-width: 600px;
-    height: 70vh;
-    max-height: 800px;
+    height: 80vh;
+    max-height: 850px;
 }
-
-/* Estilo dos cards */
 .card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
@@ -62,231 +55,62 @@ body {
     align-items: center;
     text-align: center;
 }
-
 .card.active {
     opacity: 1;
     transform: scale(1);
     visibility: visible;
     z-index: 10;
 }
+.card-content { width: 100%; }
+h1, h2 { font-family: var(--font-tech); color: var(--highlight-color); }
+.profile-pic { width: 120px; height: 120px; border-radius: 50%; border: 3px solid var(--highlight-color); margin-bottom: 1rem; object-fit: cover; }
+.personal-message, .final-message, .final-question { font-size: 1.1rem; line-height: 1.6; max-width: 90%; margin: 1rem auto; }
+.tech-subtext { font-size: 0.9rem; color: #8b949e; font-family: monospace; }
+.nav-buttons { margin-top: 2rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+.next-btn, .prev-btn, .cta-button, .restart-btn { font-family: var(--font-tech); padding: 12px 24px; border: 1px solid var(--highlight-color); background-color: transparent; color: var(--highlight-color); cursor: pointer; transition: background-color 0.3s, color 0.3s; text-decoration: none; display: inline-block; font-size: 1rem; }
+.cta-button, .final-cta { background-color: var(--highlight-color); color: var(--primary-bg); font-weight: bold; }
+.next-btn:hover, .prev-btn:hover, .cta-button:hover, .restart-btn:hover { background-color: var(--highlight-color); color: var(--primary-bg); }
+.prev-btn { border-color: var(--border-color); color: var(--text-color); }
+.prev-btn:hover { background-color: var(--border-color); color: var(--text-color); }
+#access-code { background-color: var(--primary-bg); border: 1px solid var(--border-color); color: var(--text-color); padding: 10px; width: 80%; max-width: 250px; text-align: center; font-family: var(--font-tech); margin-top: 1rem; font-size: 1.1rem; }
+#access-code:focus { outline: none; border-color: var(--highlight-color); }
+.feedback-message { height: 20px; margin-top: 10px; font-weight: bold; }
+.feedback-message.success { color: var(--success-color); }
+.feedback-message.error { color: var(--error-color); }
+.gallery { display: flex; gap: 10px; justify-content: center; margin-top: 1.5rem; flex-wrap: wrap; }
+.gallery img { width: 80px; height: 80px; object-fit: cover; border-radius: 5px; border: 2px solid var(--border-color); transition: transform 0.3s, border-color 0.3s; }
+.gallery img:hover { transform: scale(1.1); border-color: var(--highlight-color); }
+.glitch { position: relative; font-size: 2.5rem; }
+.glitch:before, .glitch:after { content: attr(data-text); position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--card-bg); overflow: hidden; }
+.glitch:before { left: 2px; text-shadow: -1px 0 red; animation: glitch-anim-1 2s linear infinite reverse; }
+.glitch:after { left: -2px; text-shadow: -1px 0 blue; animation: glitch-anim-2 2s linear infinite reverse; }
+@keyframes glitch-anim-1 { 0% { clip: rect(42px, 9999px, 44px, 0); } 5% { clip: rect(12px, 9999px, 62px, 0); } 10% { clip: rect(42px, 9999px, 44px, 0); } }
+@keyframes glitch-anim-2 { 0% { clip: rect(42px, 9999px, 44px, 0); } 15% { clip: rect(12px, 9999px, 62px, 0); } 20% { clip: rect(42px, 9999px, 44px, 0); } }
+.login-container { width: 90vw; max-width: 450px; }
+.login-container form { display: flex; flex-direction: column; gap: 1rem; width: 100%; align-items: center; margin-top: 1.5rem; }
+.login-container input { background-color: var(--primary-bg); border: 1px solid var(--border-color); color: var(--text-color); padding: 12px; width: 80%; max-width: 300px; text-align: center; font-family: var(--font-body); font-size: 1rem; }
+.login-container input:focus { outline: none; border-color: var(--highlight-color); }
+.final-gallery { position: relative; width: 100%; height: 80%; display: flex; justify-content: center; align-items: center; }
+.final-gallery img { position: absolute; max-width: 100%; max-height: 100%; border-radius: 10px; opacity: 0; transition: opacity 2s ease-in-out; }
+.final-gallery img.visible { opacity: 1; }
 
-.card-content {
-    width: 100%;
-}
+/* ============================================== */
+/* AJUSTE PARA CENTRALIZAR A TELA DE LOGIN        */
+/* ============================================== */
 
-h1, h2 {
-    font-family: var(--font-tech);
-    color: var(--highlight-color);
-}
-
-.profile-pic {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 3px solid var(--highlight-color);
-    margin-bottom: 1rem;
-    object-fit: cover;
-}
-
-.personal-message, .final-message, .final-question {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    max-width: 90%;
-    margin: 1rem auto;
-}
-
-.tech-subtext {
-    font-size: 0.9rem;
-    color: #8b949e;
-    font-family: monospace;
-}
-
-/* Estilo dos botões */
-.nav-buttons {
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.next-btn, .prev-btn, .cta-button, .restart-btn {
-    font-family: var(--font-tech);
-    padding: 12px 24px;
-    border: 1px solid var(--highlight-color);
-    background-color: transparent;
-    color: var(--highlight-color);
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1rem;
-}
-
-.cta-button, .final-cta {
-    background-color: var(--highlight-color);
-    color: var(--primary-bg);
-    font-weight: bold;
-}
-
-.next-btn:hover, .prev-btn:hover, .cta-button:hover, .restart-btn:hover {
-    background-color: var(--highlight-color);
-    color: var(--primary-bg);
-}
-
-.prev-btn {
-    border-color: var(--border-color);
-    color: var(--text-color);
-}
-
-.prev-btn:hover {
-    background-color: var(--border-color);
-    color: var(--text-color);
-}
-
-/* Input da senha */
-#access-code {
-    background-color: var(--primary-bg);
-    border: 1px solid var(--border-color);
-    color: var(--text-color);
-    padding: 10px;
-    width: 80%;
-    max-width: 250px;
-    text-align: center;
-    font-family: var(--font-tech);
-    margin-top: 1rem;
-    font-size: 1.1rem;
-}
-
-#access-code:focus {
-    outline: none;
-    border-color: var(--highlight-color);
-}
-
-.feedback-message {
-    height: 20px;
-    margin-top: 10px;
-    font-weight: bold;
-}
-.feedback-message.success {
-    color: var(--success-color);
-}
-.feedback-message.error {
-    color: var(--error-color);
-}
-
-/* Galeria de fotos */
-.gallery {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    margin-top: 1.5rem;
-    flex-wrap: wrap;
-}
-
-.gallery img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 5px;
-    border: 2px solid var(--border-color);
-    transition: transform 0.3s, border-color 0.3s;
-}
-
-.gallery img:hover {
-    transform: scale(1.1);
-    border-color: var(--highlight-color);
-}
-
-/* Animação de Glitch para o título */
-.glitch {
-    position: relative;
-    font-size: 2.5rem;
-}
-.glitch:before,
-.glitch:after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--card-bg);
-    overflow: hidden;
-}
-.glitch:before {
-    left: 2px;
-    text-shadow: -1px 0 red;
-    animation: glitch-anim-1 2s linear infinite reverse;
-}
-.glitch:after {
-    left: -2px;
-    text-shadow: -1px 0 blue;
-    animation: glitch-anim-2 2s linear infinite reverse;
-}
-
-@keyframes glitch-anim-1 {
-    0% { clip: rect(42px, 9999px, 44px, 0); }
-    5% { clip: rect(12px, 9999px, 62px, 0); }
-    /* ... (restante da animação) ... */
-}
-@keyframes glitch-anim-2 {
-    0% { clip: rect(42px, 9999px, 44px, 0); }
-    /* ... (restante da animação) ... */
-}
-
-/* ESTILOS PARA A GALERIA FINAL */
-.final-gallery {
-    position: relative;
-    width: 100%;
-    height: 80%; /* Ajuste a altura conforme necessário */
+.login-container {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.final-gallery img {
-    position: absolute;
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 10px;
-    opacity: 0; /* Começam invisíveis */
-    transition: opacity 2s ease-in-out; /* Animação de fade de 2 segundos */
-}
-
-/* Classe que o JavaScript vai adicionar para tornar a imagem visível */
-.final-gallery img.visible {
-    opacity: 1;
-}
-
-/* ESTILOS PARA A PÁGINA DE LOGIN */
-.login-container {
     width: 90vw;
     max-width: 450px;
 }
 
-.login-container form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-    align-items: center;
-    margin-top: 1.5rem;
-}
-
-.login-container input {
-    background-color: var(--primary-bg);
-    border: 1px solid var(--border-color);
-    color: var(--text-color);
-    padding: 12px;
-    width: 80%;
-    max-width: 300px;
-    text-align: center;
-    font-family: var(--font-body);
-    font-size: 1rem;
-}
-
-.login-container input:focus {
-    outline: none;
-    border-color: var(--highlight-color);
+.login-container .card {
+    /* Estas regras sobrescrevem os estilos problemáticos APENAS para o login */
+    position: relative; /* Traz o card de volta para o fluxo normal da página */
+    opacity: 1;         /* Garante que ele esteja visível */
+    transform: none;    /* Remove qualquer transformação de escala */
+    visibility: visible;
+    height: auto;       /* A altura se ajusta ao conteúdo do formulário */
 }
