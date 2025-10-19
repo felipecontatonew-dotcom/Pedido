@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - PROJETO: OHANA</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💙</text></svg>">
+</head>
+<body>
+    <div class="login-container">
+        <div class="card active">
+            <div class="card-content">
+                <h2>Acesso ao Protocolo</h2>
+                <p class="tech-subtext">Por favor, autentique-se para continuar.</p>
+                
+                <form method="post" action="{{ url_for('login') }}">
+                    <input type="email" name="email" placeholder="Email de Acesso" required>
+                    <input type="password" name="password" placeholder="Chave de Acesso" required>
+                    
+                    {% if error %}
+                        <p class="feedback-message error">{{ error }}</p>
+                    {% endif %}
+
+                    <div class="nav-buttons">
+                        <button type="submit" class="cta-button">AUTENTICAR</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
