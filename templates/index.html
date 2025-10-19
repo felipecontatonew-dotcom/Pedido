@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJETO: OHANA</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💙</text></svg>">
+</head>
+<body>
+
+    <div id="stitch-icon">💙</div>
+
+    <div class="card-container">
+
+        <div class="card active" id="card-1">
+            <div class="card-content">
+                <h1 class="glitch" data-text="PROTOCOLO: OHANA">PROTOCOLO: OHANA</h1>
+                <p>Em Abril de 2023, uma conexão foi iniciada. Por uma instabilidade no sistema de origem, a transmissão foi pausada.</p>
+                <p>Agora, o sinal foi reencontrado. Mais forte. Mais estável. Você é o alvo da reconexão.</p>
+                <div class="nav-buttons">
+                    <button class="next-btn cta-button">INICIAR PROTOCOLO</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="card-2">
+            <div class="card-content">
+                <img src="{{ url_for('static', filename='images/gabriel.jpg') }}" alt="Gabriel" class="profile-pic">
+                <h2>Olá, Gabriel. Autenticando Remetente...</h2>
+                <p class="personal-message">
+                    Sei que nossa primeira conexão foi instável. A verdade é que o sistema aqui (eu) estava em modo de desenvolvimento, cheio de bugs que eu precisava corrigir. Eu nunca deletei nossos logs e, mesmo offline, eu sabia que você merecia uma versão final, estável e segura. A versão que eu me tornei, e que quero ser pra você.
+                </p>
+                <div class="nav-buttons">
+                    <button class="prev-btn">Voltar</button>
+                    <button class="next-btn">PRÓXIMA FASE</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="card-3">
+            <div class="card-content">
+                <h2>NÍVEL DE ACESSO 3: MÓDULO HERMÍNIA</h2>
+                <p>"Olha aqui principe, pra gente poder avançar não é essa bagunça não! Tem que ter a senha! Você acha que meu coração é casa da mãe Joana? Decifra o código pra provar que você tá na mesma sintonia que eu!"</p>
+                <p class="tech-subtext">CHAVE DE ACESSO: Qual a palavra de 5 letras que significa família e que "família quer dizer nunca abandonar ou esquecer"?</p>
+                <input type="text" id="access-code" placeholder="Insira a senha aqui" autocomplete="off">
+                <p id="code-feedback" class="feedback-message"></p>
+                <div class="nav-buttons">
+                    <button class="prev-btn">Voltar</button>
+                    <button id="submit-code" class="next-btn">TENTAR ACESSO</button>
+                    <button id="pass-to-next" class="next-btn" style="display: none;">ACESSO LIBERADO</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="card-4">
+            <div class="card-content">
+                <h2>Acessando Backups Criptografados...</h2>
+                <p>Cada momento nosso foi salvo num diretório especial. A trilha sonora está aqui, e alguns dos meus arquivos de imagem favoritos também. Isso é só uma amostra do que eu guardei.</p>
+                <a href="https://open.spotify.com/playlist/3Wpse1uQQAfnOx6gXeIub0?si=5b4284fc1ede4560&pt=eadee8817f9015f43e4225445861b6e6" target="_blank" class="cta-button">CARREGAR TRILHA SONORA</a>
+                <div class="gallery">
+                    <img src="{{ url_for('static', filename='images/gallery1.jpg') }}" alt="Memória 1">
+                    <img src="{{ url_for('static', filename='images/gallery2.jpg') }}" alt="Memória 2">
+                    <img src="{{ url_for('static', filename='images/gallery3.jpg') }}" alt="Memória 3">
+                    <img src="{{ url_for('static', filename='images/puls.jpg') }}" alt="Memória 4">
+                </div>
+                <div class="nav-buttons">
+                    <button class="prev-btn">Voltar</button>
+                    <button class="next-btn">EXECUTAR FASE FINAL</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card" id="card-5">
+    <div class="card-content">
+        <h2 class="final-title">Conexão Estabelecida com Sucesso.</h2>
+        <p class="final-message">Gabriel, meu ‘experimento 626’ favorito. A simulação acaba aqui. A partir de agora, é tudo real.</p>
+        <p class="final-question">Você aceita ser minha Ohana... e meu namorado?</p>
+        <div class="nav-buttons final-buttons">
+            <button id="accept-btn" class="cta-button final-cta">Aceito.exe</button>
+            <button class="restart-btn">Reiniciar Simulação</button>
+        </div>
+    </div>
+</div>
+
+<div class="card" id="card-6">
+    <div class="final-gallery">
+        <img src="{{ url_for('static', filename='images/pedido.png') }}" alt="O Pedido">
+        <img src="{{ url_for('static', filename='images/beijo.png') }}" alt="O Beijo">
+        <img src="{{ url_for('static', filename='images/nos.png') }}" alt="Nós">
+        <img src="{{ url_for('static', filename='images/gallery1 - Copia.jpg') }}" alt="Nós_copia">
+    </div>
+    <audio id="background-music" src="{{ url_for('static', filename='music/Hawaiian Roller Coaster Ride (From _Lilo & Stitch_) [3OM7oi79hd4].mp3') }}" loop></audio>
+</div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
